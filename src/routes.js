@@ -3,7 +3,7 @@ import { BsSpeedometer2 } from "react-icons/bs";
 import { BiUserCircle } from "react-icons/bi";
 import { AiOutlineBarChart } from "react-icons/ai";
 
-export default [
+ const routes=[
     {
         to: '/',
         name: 'Home',
@@ -30,3 +30,4 @@ export default [
         Icon: AiOutlineBarChart
     }
 ];
+export default routes;
