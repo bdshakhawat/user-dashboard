@@ -15,7 +15,7 @@ import BillingHistory from "../../components/BillingHistory";
 import Paragraph from "../../components/Paragraph";
 import BarChartExample from "../../components/BarChartExample";
 
-export default function Dashboard() {
+const   Dashboard= ()=> {
   const [modal, setModal] = useState(false);
 
   const handleClose = () => {
@@ -153,3 +153,4 @@ export default function Dashboard() {
     </>
   );
 }
+export default Dashboard;
