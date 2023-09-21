@@ -63,7 +63,7 @@ After you're finished please remove all the comments and instructions!
 # 📖 User Dashboard Project <a name="about-project"></a>
 
 
-**User Dashboard Project** is a personal project to showcase my skills and works
+**User Dashboard Project** graphical interface within a software application that centralizes and displays relevant information and tools tailored to a user's specific needs and activities.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -82,16 +82,16 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- **Show my skills**
-- **Show my projects**
-- **Express my future goal as a software engineer**
+- **Provides a consolidated view of critical data and key performance indicators**
+- **Offers personalized user insights and actionable recommendations**
+- **Facilitates easy navigation to important functionalities and tasks within the application**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](#)
+- [Live Demo Link](https://usrsdashboard.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
