@@ -1,16 +1,5 @@
 <a name="readme-top"></a>
-<div align="center">
-  <!--You are encouraged to replace this logo with your own!
-  otherwise you can also remove it -->
-  <!--<img src="./src/assets/logo.png" alt="logo"
-  width="140" height="auto" /> -->
-  <br/>
 
-  <h3><b>User Dashboard</b></h3>
-  
-  
-
-<!--
 HOW TO USE:
 This is an example of how you may give instructions on setting up your project locally.
 
