@@ -128,7 +128,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone git@github.com:bdshakhawat/m-pf.git
+ (https://github.com/bdshakhawat/user-dashboard.git)
 ```
 
 ### Install
@@ -142,7 +142,7 @@ Install this project with:
 
 ### Usage
 
-To run the project, double click on ```index.html``` file or run this file in your favorite browser.
+To run the project, use  ```npm run dev``` command.
 
 <!--
 Example command:
