@@ -1,4 +1,14 @@
 <a name="readme-top"></a>
+<div align="center">
+  <!--You are encouraged to replace this logo with your own!
+  otherwise you can also remove it -->
+  <!--<img src="./src/assets/logo.png" alt="logo"
+  width="140" height="auto" /> -->
+  <br/>
+
+  <h3><b>User Dashboard</b></h3>
+  
+  
 
 <!--
 HOW TO USE:
@@ -6,7 +16,8 @@ This is an example of how you may give instructions on setting up your project l
 
 Modify this file to match your project and remove sections that don't apply.
 
-REQUIRED SECTIONS:
+<!--TABLE OF CONTENTS -->
+
 - Table of Contents
 - About the Project
   - Built With
@@ -71,9 +82,9 @@ After you're finished please remove all the comments and instructions!
 
 
 <details>
-  <summary>Client</summary>
+  <summary>Front-end</summary>
   <ul>
-    <li>HTML and CSS </li>
+    <li>React Next Js </li>
   </ul>
 </details>
 
@@ -117,6 +128,7 @@ Example command:
     <li>Installation of Git</li>
     <li>Installation of NPM</li>
     <li>A working browser</li>
+    <li> Next Js</li>
     <li>Internet connection</li>
     <li>A code editor like Visual Studio Code</li>
   </ul>
@@ -136,6 +148,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 <ul>
+  <li>npm install</li>
   <li>Node</li>
   <li>Linters (follow this link's instruction <a href="https://github.com/microverseinc/linters-config">install linter</a>)</li>
 </ul>
