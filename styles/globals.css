@@ -42,6 +42,9 @@ a {
 .tc-grey{
   color: grey;
 }
+.tc-red{
+  color: red;
+}
 
 .t-center{
   text-align: center;
