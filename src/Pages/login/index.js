@@ -1,12 +1,57 @@
+import React, { useState } from "react";
 import Link from "next/link";
 import FullButton from "@aio/components/FullButton";
+import{signInWithEmailAndPassword} from "firebase/auth";
+import { auth } from "../../firebase";
 import Input from "@aio/components/Input";
 import Logo from "@aio/components/Logo";
 import styles from "./login.module.css";
 
 const Login = () => {
+  const [error, setError] = useState(false);
+  const [email, setEmail] = useState(" ");
+  const [password, setPassword] = useState(" ");
+
+  
+  
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        dispatch({type:"LOGIN", payload:user})
+        navitage("/")
+      })
+      .catch((error) => {
+        setError(true);
+      });
+  };
+  
+  
+  
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
+  //   // Add your login logic here
+  //   signInWithEmailAndPassword(auth, email, password)
+    
+  //   .then((userCredential) => {
+  //   // Signed in 
+  //      const user = userCredential.user;
+  //      console.log(user);
+  //     })
+  //  .catch((error) => {
+  //       setError(true);
+  //       console.log(error);
+  //   });
+  // }
+
   return (
-      <div className={styles.container}>
+    <div className={styles.container}>
+      {/*By refactoring just add this form tag here and apply the onSubmit event on form tag */}
+      <form onSubmit={handleLogin}>
         <section className={styles["login-container"]}>
           <div className={styles["brand-container"]}>
             <Logo />
@@ -22,12 +67,12 @@ const Login = () => {
               <h1>Login</h1>
               <p>Please enter email and password to login</p>
             </div>
-            <div>
+            <div >
               <Input
                 inputContainerStyle={{ padding: "15px 30px" }}
-                type="text"
+                type="email"
                 placeholder="Email"
-                onChange={(e) => console.log(e)}
+                onChange={(e) => setEmail(e.target.value)}
                 name="email"
                 label={"Email"}
               />
@@ -35,12 +80,13 @@ const Login = () => {
                 inputContainerStyle={{ padding: "15px 30px" }}
                 type="password"
                 placeholder="Password"
-                onChange={(e) => console.log(e)}
-                name="email"
-                label={"Email"}
+                onChange={(e) => setPassword(e.target.value)}
+                name="password"
+                label={"Password"}
               />
               <FullButton label={"Login"} />
-
+              {error && <p className="tc-red t-center">Invalid email or password</p>}
+              
               <p className="tc-grey t-center">
                 Dont have an account?{" "}
                 <Link className="link" href={`/signup`}>Signup for free</Link>
@@ -48,8 +94,10 @@ const Login = () => {
             </div>
           </div>
         </section>
-      </div>
+      </form>
+    </div>
   );
 };
 
 export default Login;
+        

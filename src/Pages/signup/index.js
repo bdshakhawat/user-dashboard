@@ -47,7 +47,7 @@ const Signup = () => {
                 name="email"
                 label={"Email"}
               />
-              <FullButton label={"Login"} />
+              <FullButton label={"Sign Up"} />
 
               <p className="tc-grey t-center">
                 If you already have an account.{" "}
