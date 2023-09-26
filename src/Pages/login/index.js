@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import FullButton from "@aio/components/FullButton";
 import{signInWithEmailAndPassword} from "firebase/auth";
@@ -9,44 +10,31 @@ import styles from "./login.module.css";
 
 const Login = () => {
   const [error, setError] = useState(false);
-  const [email, setEmail] = useState(" ");
-  const [password, setPassword] = useState(" ");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  
+  const router = useRouter();
   
   const handleLogin = (e) => {
     e.preventDefault();
 
     signInWithEmailAndPassword(auth, email, password)
+    
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
         console.log(user);
-        dispatch({type:"LOGIN", payload:user})
-        navitage("/")
+        // dispatch({type:"LOGIN", payload:user})
+        router.push("/");
       })
       .catch((error) => {
         setError(true);
+        console.log(error);
       });
   };
   
   
   
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-  //   // Add your login logic here
-  //   signInWithEmailAndPassword(auth, email, password)
-    
-  //   .then((userCredential) => {
-  //   // Signed in 
-  //      const user = userCredential.user;
-  //      console.log(user);
-  //     })
-  //  .catch((error) => {
-  //       setError(true);
-  //       console.log(error);
-  //   });
-  // }
 
   return (
     <div className={styles.container}>
