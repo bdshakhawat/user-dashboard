@@ -25,7 +25,7 @@ const Login = () => {
         const user = userCredential.user;
         console.log(user);
         // dispatch({type:"LOGIN", payload:user})
-        router.push("/");
+        router.push('/dashboard');
       })
       .catch((error) => {
         setError(true);

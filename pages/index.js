@@ -1,3 +1,7 @@
-import dashboard from "./dashboard";
+import Signup from "../src/Pages/signup";
 
-export default dashboard;
+export default Signup;
+
+// import dashboard from "./dashboard";
+
+// export default dashboard;
