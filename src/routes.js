@@ -28,6 +28,12 @@ import { AiOutlineBarChart } from "react-icons/ai";
         to: '/statistics',
         name: 'Statistics',
         Icon: AiOutlineBarChart
+    },
+    {
+        to: '/password-reset',
+        name: 'password-reset',
+        Icon: IoHomeOutline
     }
+
 ];
 export default routes;
