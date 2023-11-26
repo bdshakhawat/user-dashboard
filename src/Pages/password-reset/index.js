@@ -49,9 +49,8 @@ export default function PasswordReset() {
                   <p>Please enter email to Reset Password</p>
                 </div>
                 <div>
-                    <input 
-                      // className={styles[emailInput::placeholder]}
-                      // inputContainerStyle={{ padding: "0px 30px", marginLeft:"30px" }} 
+                    <Input 
+                      inputContainerStyle={{ padding: "15px 30px" }} 
                       type="email"
                       placeholder="Email Address"
                       value={email}
