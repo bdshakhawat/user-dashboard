@@ -25,7 +25,7 @@ const Login = () => {
         const user = userCredential.user;
         console.log(user);
         // dispatch({type:"LOGIN", payload:user})
-        router.push("/");
+        router.push('/dashboard');
       })
       .catch((error) => {
         setError(true);
@@ -78,7 +78,13 @@ const Login = () => {
               <p className="tc-grey t-center">
                 Dont have an account?{" "}
                 <Link className="link" href={`/signup`}>Signup for free</Link>
+
               </p>
+              <p className="tc-grey t-center">
+                  Forgot your password? 
+                  <Link href="/password-reset">Reset it here</Link>
+
+                </p>
             </div>
           </div>
         </section>
@@ -86,6 +92,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;
-        
