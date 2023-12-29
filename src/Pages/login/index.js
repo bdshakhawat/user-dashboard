@@ -50,6 +50,12 @@ const Login = () => {
 
   return (
     <div className={styles.container}>
+      <div className="tc-grey t-center" style={{marginTop:"400px"}}>
+        <h1>Sign In with Google</h1>
+        <button style={{color: "white", padding:"5px",backgroundColor: "DodgerBlue"}}  onClick={handleGoogleLogin}>Login</button>
+        {error && <p className="tc-red t-center">Login failed. Please try again.</p>}
+
+      </div>
       <form onSubmit={handleLogin}>
         <section className={styles["login-container"]}>
           <div className={styles["brand-container"]}>
@@ -103,11 +109,7 @@ const Login = () => {
 
 
       </form>
-      <div className="tc-grey t-center">
-        <button  onClick={handleGoogleLogin}>Login</button>
-        {error && <p className="tc-red t-center">Login failed. Please try again.</p>}
-
-      </div>
+      
       
     </div>
   );
