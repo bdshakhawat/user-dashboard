@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import FullButton from "@aio/components/FullButton";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import{signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../../firebase";
 import Input from "@aio/components/Input";
@@ -32,13 +33,29 @@ const Login = () => {
         console.log(error);
       });
   };
+  const handleGoogleLogin = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        router.push('/dashboard');
+      })
+      .catch((error) => {
+        setError(true);
+        console.log(error);
+      });
   
-  
+    };
   
 
   return (
     <div className={styles.container}>
-      {/*By refactoring just add this form tag here and apply the onSubmit event on form tag */}
+      <div className="tc-grey t-center" style={{marginTop:"400px"}}>
+        <h1>Sign In with Google</h1>
+        <button style={{color: "white", padding:"5px",backgroundColor: "DodgerBlue"}}  onClick={handleGoogleLogin}>Login</button>
+        {error && <p className="tc-red t-center">Login failed. Please try again.</p>}
+
+      </div>
       <form onSubmit={handleLogin}>
         <section className={styles["login-container"]}>
           <div className={styles["brand-container"]}>
@@ -46,7 +63,6 @@ const Login = () => {
             <div className={styles['logo-explain']}>USER Dashboard</div>
           </div>
 
-          {/* login form */}
           <div className={styles["form-container"]}>
             <div className="t-center" style={{ margin: "15px 0" }}>
               <div className={styles["sm-brand-container"]}>
@@ -55,7 +71,7 @@ const Login = () => {
               <h1>Login</h1>
               <p>Please enter email and password to login</p>
             </div>
-            <div >
+            <div>
               <Input
                 inputContainerStyle={{ padding: "15px 30px" }}
                 type="email"
@@ -84,11 +100,17 @@ const Login = () => {
                   Forgot your password? 
                   <Link href="/password-reset">Reset it here</Link>
 
-                </p>
+              </p>
+
+
             </div>
           </div>
         </section>
+
+
       </form>
+      
+      
     </div>
   );
 };
