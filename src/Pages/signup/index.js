@@ -11,6 +11,7 @@ import styles from './signup.module.css';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, firestore } from '../../firebase';
 import { collection, addDoc } from "firebase/firestore";
+import { validateUserData } from '../../middleware';
 
 
 const Signup = () => {
@@ -55,43 +56,29 @@ const Signup = () => {
       return;
     }
 
+    if (validateUserData({ name, email, role: 'user' })) {
+      // Proceed to store data in Firestore
+      addDoc(collection(firestore, "users"), {
+        name:name,
+        email:email,
+        role:"users",
+      })
+      .then(() => {
+        alert('Message submitted 👍' );
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  
+      setName('');
+      setEmail('');
+      setRole('');
+    }
 
-    addDoc(collection(firestore, "users"), {
-      name:name,
-      email:email,
-      role:"users",
-    })
-    .then(() => {
-      alert('Message submitted 👍' );
-    })
-    .catch((error) => {
-      alert(error.message);
-    });
-
-    setName('');
-    setEmail('');
-    setRole('');
-
-    // createUserWithEmailAndPassword(auth, email, password)
-    //   .then((userCredential) => {
-    //     const userData={
-    //       name:name,
-    //       email:email,
-    //       role:'user'
-    //     }
-    //     firestore.collection('users').doc(userCredential.user.uid).set(userData)
-    //     .then(() => {
-    //     router.push('/login');
-    //   })
-    //   .catch((error) => {
-    //     setError(error.message);
-    //   });
-    // })
-    // .catch((error) => {
-    //   setError(error.message);
-    // })
 
     
+
+       
   };
 
 
