@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -24,7 +25,7 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
+        // console.log(user);
         // dispatch({type:"LOGIN", payload:user})
         router.push('/dashboard');
       })
@@ -46,12 +47,15 @@ const Login = () => {
       });
   
     };
+
+
+    
   
 
   return (
     <div className={styles.container}>
-      <div className="tc-grey t-center" style={{marginTop:"400px"}}>
-        <h1>Sign In with Google</h1>
+      <div className="tc-grey t-center" style={{marginTop:"50px"}}>
+        <h1>Login with Google</h1>
         <button style={{color: "white", padding:"5px",backgroundColor: "DodgerBlue"}}  onClick={handleGoogleLogin}>Login</button>
         {error && <p className="tc-red t-center">Login failed. Please try again.</p>}
 
